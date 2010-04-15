@@ -35,7 +35,7 @@ set ruler  " Ruler on
 set nu  " Line numbers on
 set nowrap  " Line wrapping off
 set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
-" colorscheme vividchalk  " Uncomment this to set a default theme
+colorscheme desert  " Uncomment this to set a default theme
  
 " Formatting (some of these are for coding in C and C++)
 set ts=2  " Tabs are 2 spaces
@@ -64,7 +64,8 @@ set laststatus=2  " Always show status line.
 set mousehide  " Hide mouse after chars typed
 set mouse=a  " Mouse in all modes
 
+
 " Backups & Files
 set backup                     " Enable creation of backup file.
-set backupdir=~/.vim/backups " Where backups will go.
+set backupdir=~/.vim/backup " Where backups will go.
 set directory=~/.vim/tmp     " Where temporary files will go.

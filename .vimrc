@@ -61,8 +61,8 @@ set lcs=tab:\ \ ,eol:$,trail:~,extends:>,precedes:<
 set laststatus=2  " Always show status line.
  
 " gvim specific
-" set mousehide  " Hide mouse after chars typed
-" set mouse=a  " Mouse in all modes
+set mousehide  " Hide mouse after chars typed
+set mouse=a  " Mouse in all modes
 
 " Backups & Files
 set backup                     " Enable creation of backup file.

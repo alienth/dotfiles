@@ -32,7 +32,7 @@ set shiftwidth=2  " Tabs under smart indent
 set nocp incsearch
 set cpoptions=$
 " set cinoptions=:0,p0,t0
-set cinwords=if,else,while,do,for,switch,case
+set cinwords=if,else,while,do,for,switch,case,def,class
 set formatoptions=tcqr
 set cindent
 set autoindent

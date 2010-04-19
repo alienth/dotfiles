@@ -34,7 +34,7 @@ set cpoptions=$
 " set cinoptions=:0,p0,t0
 set cinwords=if,else,while,do,for,switch,case,def,class
 set formatoptions=tcqr
-set cindent
+" set cindent " Using smartindent instead
 set autoindent
 set smartindent
 set smarttab

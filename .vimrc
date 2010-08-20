@@ -37,3 +37,6 @@ set novisualbell  " No blinking .
 set noerrorbells  " No noise.
 set laststatus=2  " Always show status line.
 
+" Fold so I can ignore those damn comment blocks
+set foldmethod=marker
+set foldmarker={{{,}}}

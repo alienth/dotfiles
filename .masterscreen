@@ -1,0 +1,14 @@
+hardstatus alwayslastline
+hardstatus string '%{= mK}%-Lw%{= KW}%50>%n%f* %t%{= mK} %+Lw%< %{= kG}%-=%D %d %M %Y %c:%s%{-}'
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
+hardstatus string '%{= kG}%-Lw%{= kW}%50> %n%f* %t%{= kG}%+Lw%< %{= kG}%-=%c:%s%{-}'
+
+sessionname master
+
+escape f
+
+
+screen -h 0 -t spawner 0 bash -c 'while :; do read i; `grep $i .masterscreen `; done'
+screen -h 0 -t ender screen -xR slave
+
+screen -h 0 -t neo 1 ssh -A neo

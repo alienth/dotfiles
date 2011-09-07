@@ -25,6 +25,8 @@ set backup                     " Enable creation of backup file.
 set backupdir=~/.vim/backup " Where backups will go.
 set directory=~/.vim/tmp     " Where temporary files will go.
 
+set scrolloff=4
+
 filetype on  " Automatically detect file types.
 
 " Visual

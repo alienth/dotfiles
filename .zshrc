@@ -5,7 +5,7 @@ promptinit
 prompt adam1
 
 set -o vi
-setopt histignoredups sharehistory correctall
+setopt histignoredups sharehistory correctall extendedhistory
 
 # Use vi
 bindkey -v

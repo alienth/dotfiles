@@ -1,0 +1,27 @@
+unalias -a
+alias dpkg-purge="sudowarn dpkg --purge"
+alias ..='cd ..'
+
+alias graceful='apachectl configtest && apachectl graceful && pgrep apache'
+alias psgrep='ps auxwww | grep'
+alias sb='sudo bash'
+alias fs='source $HOME/.fixssh'
+
+# enable color support of ls and also add handy aliases
+if [ "$TERM" != "dumb" ] && [ -x /usr/bin/dircolors ]; then
+    eval "`dircolors -b`"
+    alias ls='echo; ls --color=auto'
+    #alias dir='ls --color=auto --format=vertical'
+    #alias vdir='ls --color=auto --format=long'
+fi
+
+# Aliases which don't work on crippled servers
+[[ -z $CRIPPLED ]] && alias grep='grep --color=auto'
+
+# some more ls aliases
+#alias ll='ls -l'
+#alias la='ls -A'
+#alias l='ls -CF'
+
+
+export RI="-T --format ansi"

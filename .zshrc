@@ -7,8 +7,8 @@ prompt adam1
 set -o vi
 setopt histignorealldups sharehistory correctall
 
-# Use emacs keybindings even if our EDITOR is set to vi
-bindkey -e
+# Use vi
+bindkey -v
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=9999999999

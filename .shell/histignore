@@ -1,0 +1,14 @@
+# non working, at this time
+IGNORE_COMMANDS=(ls echo)
+preexec() {
+  command=$1
+  echo $command
+  if [[ ${IGNORE_COMMANDS[(r)$command]} == $command ]]; then
+      echo returning 1
+      return 1
+  else
+      echo returning 0
+      return 0
+  fi
+}
+

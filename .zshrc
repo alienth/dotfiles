@@ -16,6 +16,9 @@ SAVEHIST=9999999999
 HOSTNAME=`hostname -s || echo unknown`
 HISTFILE=~/.zsh_history/$HOSTNAME
 
+HISTIGNORE="ls"
+
+
 # Use modern completion system
 autoload -Uz compinit
 compinit

@@ -2,4 +2,4 @@
 	name = Jason Harvey
 	email = alienth@reddit.com
 [alias]
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset - %C(bold blue)<%an>%Creset %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit

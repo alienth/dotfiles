@@ -49,7 +49,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=/home/alienth/env/bin:/home/alienth/bin:/home/alienth/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+export PATH=$HOME/env/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment

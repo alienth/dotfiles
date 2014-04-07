@@ -12,7 +12,7 @@ ZSH_THEME="robbyrussell"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="true"
@@ -37,13 +37,8 @@ COMPLETION_WAITING_DOTS="true"
 # much, much faster.
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-HIST_STAMPS="yyyy-mm-dd"
-
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM=.shell/zsh/
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -72,12 +67,3 @@ export PATH=/home/alienth/env/bin:/home/alienth/bin:/home/alienth/bin:/usr/local
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-
-# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=9999999999
-HISTFILESIZE=9999999999
-SAVEHIST=9999999999
-HOSTNAME=`hostname -s || echo unknown`
-HISTFILE=~/.zsh_history/$HOSTNAME
-

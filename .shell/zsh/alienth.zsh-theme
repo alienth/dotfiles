@@ -11,7 +11,7 @@ function box_name {
     [ -f ~/.box-name ] && cat ~/.box-name || hostname -s
 }
 
-local ret_status="%(?:%{$fg_bold[green]%}^_^ :%{$fg_bold[red]%}O_O %s)"
+local ret_status="%(?:%{$fg_bold[green]%}^_^ :%{$fg_bold[red]%}O_O %s)%{$reset_color%}"
 
 # Directory info.
 local current_dir='${PWD/#$HOME/~}'
@@ -28,7 +28,7 @@ PROMPT="
 (${current_dir}) \
 ${ret_status}\
 ${git_info}
-%{$fg[white]%}%n@%{$fg[green]%}$(box_name) \
+%{$fg[white]%}%n@%{$fg[green]%}$(box_name)%{$reset_color%} \
 %{$terminfo[bold]$fg[white]%}$ %{$reset_color%}"
 
 #if [[ "$(whoami)" == "root" ]]; then

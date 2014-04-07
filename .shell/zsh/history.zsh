@@ -10,3 +10,4 @@ setopt histignoredups sharehistory extendedhistory
 setopt histverify
 setopt histignorespace
 
+alias history='fc -il 1'

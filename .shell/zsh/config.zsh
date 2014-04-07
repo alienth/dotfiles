@@ -3,3 +3,4 @@
 # sane globbing failure
 setopt cshnullglob
 
+bindkey -v

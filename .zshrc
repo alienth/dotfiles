@@ -10,6 +10,8 @@ setopt histignoredups sharehistory extendedhistory
 # sane globbing failure
 setopt cshnullglob
 
+setopt histverify
+
 # Use vi
 bindkey -v
 

@@ -6,11 +6,12 @@ prompt adam1
 
 set -o vi
 setopt histignoredups sharehistory extendedhistory
+setopt histverify
+setopt histignorespace
 
 # sane globbing failure
 setopt cshnullglob
 
-setopt histverify
 
 # Use vi
 bindkey -v

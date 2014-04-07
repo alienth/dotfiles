@@ -7,7 +7,7 @@ HISTFILE=~/.zsh_history/$HOSTNAME
 
 
 setopt histignoredups sharehistory extendedhistory
-setopt histverify
+#setopt histverify
 setopt histignorespace
 
 alias history='fc -il 1'

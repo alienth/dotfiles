@@ -7,6 +7,9 @@ prompt adam1
 set -o vi
 setopt histignoredups sharehistory extendedhistory
 
+# sane globbing failure
+setopt cshnullglob
+
 # Use vi
 bindkey -v
 

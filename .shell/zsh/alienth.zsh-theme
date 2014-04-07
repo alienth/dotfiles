@@ -28,7 +28,7 @@ PROMPT="
 (${current_dir}) \
 ${ret_status}\
 ${git_info}
-%{$fg[white]%}%n@%{$fg[green]%}$(box_name)%{$reset_color%} \
+%{$fg[white]%}%n%{$fg[green]%}@$(box_name)%{$reset_color%} \
 %{$terminfo[bold]$fg[white]%}$ %{$reset_color%}"
 
 #if [[ "$(whoami)" == "root" ]]; then

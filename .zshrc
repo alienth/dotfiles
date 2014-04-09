@@ -1,3 +1,4 @@
+# ~~~~~~~~~~~~ BEGIN OH-MY-ZSH CONFIGURATION ~~~~~~~~~~~~
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -47,23 +48,23 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+# ~~~~~~~~~~~~ END OH-MY-ZSH CONFIGURATION ~~~~~~~~~~~~
+
 # User configuration
 
-export PATH=$HOME/env/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+# set PATH so it includes user's private bin if it exists
+if [ -d $HOME/bin ] ; then
+    PATH=$HOME/bin:"${PATH}"
+fi
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [ -d $HOME/env/bin ] ; then
+    PATH=$HOME/env/bin:"${PATH}"
+fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+# If we are root, get root paths
+if [ "$EUID" = "0" ]; then
+    PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin
+fi
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"

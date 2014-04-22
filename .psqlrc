@@ -1,0 +1,3 @@
+
+\set HISTFILE ~/.psql_history/ :serverhostname - :DBNAME
+\set HISTSIZE 1000000

@@ -1,3 +1,10 @@
+" Pathogen load
+filetype off
+call pathogen#infect()
+call pathogen#helptags()
+
+filetype on  " Automatically detect file types.
+
 syntax on
 set background=dark
 set viminfo='20,"50
@@ -27,7 +34,6 @@ set directory=~/.vim/tmp     " Where temporary files will go.
 
 set scrolloff=4
 
-filetype on  " Automatically detect file types.
 
 " Visual
 set showmatch  " Show matching brackets.

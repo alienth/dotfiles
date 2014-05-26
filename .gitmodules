@@ -4,3 +4,15 @@
 [submodule ".vim/bundle/python-mode"]
 	path = .vim/bundle/python-mode
 	url = git://github.com/klen/python-mode.git
+[submodule ".vim/bundle/surround"]
+	path = .vim/bundle/surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule ".vim/bundle/minibufexpl"]
+	path = .vim/bundle/minibufexpl
+	url = https://github.com/fholgado/minibufexpl.vim.git
+[submodule ".vim/bundle/ack"]
+	path = .vim/bundle/ack
+	url = https://github.com/mileszs/ack.vim.git
+[submodule ".vim/bundle/git"]
+	path = .vim/bundle/git
+	url = https://github.com/tpope/vim-git.git

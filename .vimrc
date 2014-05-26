@@ -11,14 +11,15 @@ set viminfo='20,"50
 
 set nocompatible  " Clean out any compat. Necessary? FIXME
 
-set softtabstop=2
-set smartindent
-set smarttab
-set expandtab
-set autoindent
-set ts=2  " Tabs are 2 spaces
-set bs=2  " Backspace over everything in insert mode
-set shiftwidth=2  " Tabs under smart indent
+set smartindent " try to auto-add indents where they make sense
+set autoindent  " copy indent from current line when starting new line
+set smarttab    " insert shiftwidth number of blanks in front of a line
+set expandtab   " use blanks instead of literal <Tab>s
+set sts=4       " number of spaces a <Tab> counts for when editing
+set shiftwidth=4  " number of spaces to use for each autoindent
+set ts=8        " literal tabs are 8 spaces
+
+set bs=2        " Backspace over everything in insert mode
 set nowrap  " Line wrapping off
 set nu  " Line numbers on
 set ruler  " Ruler on

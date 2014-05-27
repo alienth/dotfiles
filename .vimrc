@@ -50,3 +50,5 @@ set foldmethod=indent
 
 set hlsearch   " hilight items found via search
 set incsearch  " show matches when typing search cmd
+
+set showcmd " display incomplete commands in laststatus

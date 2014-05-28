@@ -64,3 +64,5 @@ endif
 " Mappings
 set pastetoggle=<F2>
 map <F3> :set nonu lcs=
+map <F5> :DiffOrig<CR>
+

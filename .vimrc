@@ -3,7 +3,7 @@ filetype off
 call pathogen#infect()
 call pathogen#helptags()
 
-filetype on  " Automatically detect file types.
+filetype plugin indent on  " Automatically detect file types.
 
 syntax on
 set background=dark

@@ -66,3 +66,6 @@ set pastetoggle=<F2>
 map <F3> :set nonu lcs=
 map <F5> :DiffOrig<CR>
 
+" Have ctrlp ignore a bunch of shit we don't want to search
+let g:ctrlp_custom_ignore = '\v/(\.config|\.cache|\.local|\.npm|\.minecraft|\.git|\.svn|\.oh-my-zsh|env)$'
+

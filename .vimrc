@@ -68,6 +68,27 @@ set pastetoggle=<F2>
 map <F3> :set nonu lcs=
 map <F5> :DiffOrig<CR>
 
+" ----- plugin options below
+"
 " Have ctrlp ignore a bunch of shit we don't want to search
 let g:ctrlp_custom_ignore = '\v/(\.config|\.cache|\.local|\.npm|\.minecraft|\.git|\.svn|\.oh-my-zsh|env)$'
+
+let g:pymode = 1
+let g:pymode_options = 1
+let g:pymode_indent = 1
+let g:pymode_folding = 1
+let g:pymode_motion = 1
+let g:pymode_doc = 1
+
+let g:pymode_lint = 1
+let g:pymode_lint_checkers = ['pep8', 'pep257']
+
+let g:pymode_rope = 1
+let g:pymode_rope_completion = 1
+let g:pymode_rope_complete_on_dot = 1
+let g:pymode_rope_completion_bind = '<C-Space>'
+let g:pymode_rope_goto_definition_bind = '<C-c>g'
+let g:pymode_syntax = 1
+let g:pymode_syntax_all = 1
+let g:pymode_rope_goto_definition_cmd = 'e'
 

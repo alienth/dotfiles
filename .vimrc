@@ -53,6 +53,8 @@ set incsearch  " show matches when typing search cmd
 
 set showcmd " display incomplete commands in laststatus
 
+set hidden " hide buffer when it becomes abandoned
+
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
 " Only define it when not defined already.

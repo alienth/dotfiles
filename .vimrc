@@ -24,7 +24,7 @@ set nowrap  " Line wrapping off
 set nu  " Line numbers on
 set ruler  " Ruler on
 
-set cpoptions=$ " Change-word shows deleted chars
+set cpoptions+=$ " Change-word shows deleted chars
 
 set clipboard+=unnamed  " Yanks go on clipboard instead.
 

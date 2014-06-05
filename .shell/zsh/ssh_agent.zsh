@@ -11,7 +11,7 @@ function find_ssh_auth_sock() {
 
     # Search for keyring sockets and use them if they're open
     for file in $sockets; do
-      if [[ $file =~ '/run/user/.*' ]]; then
+      if [[ ( -S $file ) && $file =~ '/run/user/.*' ]]; then
         export SSH_AUTH_SOCK=$file
         return
       elif lsof $file &> /dev/null; then

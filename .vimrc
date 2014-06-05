@@ -68,6 +68,11 @@ set pastetoggle=<F2>
 map <F3> :set nonu lcs=
 map <F5> :DiffOrig<CR>
 
+" autocommands
+
+au FileType python syn match dangerZone /\%79v.\+/ display
+au FileType python hi def link dangerZone error
+
 " ----- plugin options below
 "
 " Have ctrlp ignore a bunch of shit we don't want to search

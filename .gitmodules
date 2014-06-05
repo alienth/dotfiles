@@ -1,5 +1,5 @@
 [submodule ".oh-my-zsh"]
-	path = .oh-my-zsh
+	path = .shell/oh-my-zsh
 	url = git@github.com:alienth/oh-my-zsh.git
 [submodule ".vim/bundle/python-mode"]
 	path = .vim/bundle/python-mode

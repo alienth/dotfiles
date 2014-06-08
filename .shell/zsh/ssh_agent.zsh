@@ -1,5 +1,5 @@
 
-export SSH_AUTH_SOCK=$HOME/.ssh/ssh_auth_sock
+export SSH_AUTH_SOCK=$HOME/.ssh/sockets/$(hostname -s)
 
 function find_ssh_auth_sock() {
   emulate -L zsh

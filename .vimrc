@@ -73,6 +73,8 @@ map <F5> :DiffOrig<CR>
 au FileType python syn match dangerZone /\%79v.\+/ display
 au FileType python hi def link dangerZone error
 
+au FileType notes silent! colorscheme slate
+
 " ----- plugin options below
 "
 " Have ctrlp ignore a bunch of shit we don't want to search

@@ -78,6 +78,8 @@ au FileType python hi def link dangerZone error
 " Have ctrlp ignore a bunch of shit we don't want to search
 let g:ctrlp_custom_ignore = '\v/(\.config|\.cache|\.local|\.npm|\.minecraft|\.git|\.svn|\.oh-my-zsh|env)$'
 
+let g:notes_directories = ['~/notes']
+
 let g:pymode = 1
 let g:pymode_options = 1
 let g:pymode_indent = 1

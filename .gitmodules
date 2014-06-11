@@ -37,3 +37,9 @@
 [submodule ".vim/bundle/splitjoin"]
 	path = .vim/bundle/splitjoin
 	url = https://github.com/AndrewRadev/splitjoin.vim.git
+[submodule ".vim/bundle/misc"]
+	path = .vim/bundle/misc
+	url = https://github.com/alienth/vim-misc.git
+[submodule ".vim/bundle/notes"]
+	path = .vim/bundle/notes
+	url = https://github.com/alienth/vim-notes.git

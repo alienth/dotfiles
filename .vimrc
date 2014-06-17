@@ -89,7 +89,7 @@ let g:pymode_folding = 1
 let g:pymode_motion = 1
 let g:pymode_doc = 1
 
-let g:pymode_lint = 1
+let g:pymode_lint = 0
 let g:pymode_lint_checkers = ['pep8', 'pep257']
 
 let g:pymode_rope = 1

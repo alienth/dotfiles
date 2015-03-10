@@ -1,6 +1,6 @@
 alias ls='echo; ls --color=auto'
 
-alias sb='sudo zsh'
+alias sb='sudo -E zsh'
 
 alias psgrep='ps auxwww | grep'
 

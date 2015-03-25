@@ -43,3 +43,6 @@
 [submodule ".vim/bundle/notes"]
 	path = .vim/bundle/notes
 	url = https://github.com/alienth/vim-notes.git
+[submodule ".vim/bundle/vim-go"]
+	path = .vim/bundle/vim-go
+	url = https://github.com/fatih/vim-go.git

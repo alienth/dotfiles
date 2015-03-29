@@ -1,4 +1,6 @@
 
+unsetopt cdablevars
+
 #complete -cf sudo
 sudowarn () {
 	if [ "`id -u`" -eq 0 ]; then

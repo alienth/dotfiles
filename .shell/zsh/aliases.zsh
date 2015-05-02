@@ -9,3 +9,6 @@ alias ..='cd ..'
 alias psql='psql --set "serverhostname=$HOSTNAME"'
 
 alias grep='grep --color=auto'
+
+alias dud='du -xch . --max-depth=1 | sort -h'
+alias sdud='sudo du -xch . --max-depth=1 | sort -h'

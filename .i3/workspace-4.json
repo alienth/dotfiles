@@ -1,0 +1,76 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1580,
+       "width": 1276,
+       "x": 1292,
+       "y": 483
+    },
+    "name": "Grafana - Site Traffic - Google Chrome",
+    "mark": "grafana",
+    "percent": 0.359067149175714,
+    "swallows": [
+       {
+       "class": "^Firefox$"
+       // "instance": "^google\\-chrome$",
+       // "title": "^Grafana\\ \\-\\ Site\\ Traffic\\ \\-\\ Google\\ Chrome$",
+       // "transient_for": "^$",
+       // "window_role": "^browser$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 2521,
+       "width": 1596,
+       "x": 2572,
+       "y": 28
+    },
+    "name": "Site Reliability Engineering | chat.meta.stackexchange.com - Google Chrome",
+    "mark": "chat",
+    "percent": 0.400725976914819,
+    "swallows": [
+       {
+       "class": "^Firefox$"
+       // "instance": "^google\\-chrome$",
+       // "title": "^Site\\ Reliability\\ Engineering\\ \\|\\ chat\\.meta\\.stackexchange\\.com\\ \\-\\ Google\\ Chrome$",
+       // "transient_for": "^$",
+       // "window_role": "^browser$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1250,
+       "width": 1596,
+       "x": 2572,
+       "y": 1299
+    },
+    "mark": "bosun",
+    "name": "Bosun — Dashboard - Google Chrome",
+    "percent": 0.240206873909467,
+    "swallows": [
+       {
+       "class": "^Firefox$"
+       // "instance": "^google\\-chrome$",
+       // "title": "^Bosun\\ \\—\\ Dashboard\\ \\-\\ Google\\ Chrome$",
+       // "transient_for": "^$",
+       // "window_role": "^browser$"
+       }
+    ],
+    "type": "con"
+}
+

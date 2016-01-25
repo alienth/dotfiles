@@ -13,3 +13,5 @@ set gui+=nonavigation
 :lazy fmaps -u='mail\.google\.com/mail' c / j k n p o u e x s r a # [ ] ? gi gs gt gd ga gc
 :lazy fmaps -u='mail\.google\.com/mail/.*/[0-9a-f]+$' c / j,n k,p n,j p,k o u e x s r a # [ ] ? gi gs gt gd ga gc
 :lazy fmaps -u='app\.roll20\.net/editor' l k o g m f d s <C-l> , a g d q r y u d p w c i j / n N ; [
+
+:ignorekeys add -except=<C-n>,<C-p> docs\.google\.com

@@ -15,3 +15,8 @@ set gui+=nonavigation
 
 :ignorekeys add -except=<C-n>,<C-p> docs\.google\.com
 :ignorekeys add -except=<C-n>,<C-p> app\.roll20\.net/editor
+
+:imap <C-n> <Esc>gt<Esc>
+:imap <C-p> <Esc>gT<Esc>
+:imap <C-i> <Nop>
+:imap <C-o> <Nop>

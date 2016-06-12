@@ -9,12 +9,9 @@ source! /home/alienth/.vimperatorrc.local
 set gui+=nonavigation
 
 
-:command! -nargs=+ lazy autocmd VimperatorEnter .* <args>
-:lazy fmaps -u='mail\.google\.com/mail' c / j k n p o u e x s r a # [ ] ? gi gs gt gd ga gc
-:lazy fmaps -u='mail\.google\.com/mail/.*/[0-9a-f]+$' c / j,n k,p n,j p,k o u e x s r a # [ ] ? gi gs gt gd ga gc
-
 :ignorekeys add -except=<C-n>,<C-p> docs\.google\.com
 :ignorekeys add -except=<C-n>,<C-p> app\.roll20\.net/editor
+:ignorekeys add -except=<C-n>,<C-p> mail\.google\.com
 
 :imap <C-n> <Esc>gt<Esc>
 :imap <C-p> <Esc>gT<Esc>

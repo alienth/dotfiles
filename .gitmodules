@@ -1,9 +1,9 @@
 [submodule ".oh-my-zsh"]
 	path = .shell/oh-my-zsh
-	url = git@github.com:alienth/oh-my-zsh.git
+	url = https://github.com/alienth/oh-my-zsh.git
 [submodule ".vim/bundle/python-mode"]
 	path = .vim/bundle/python-mode
-	url = git://github.com/klen/python-mode.git
+	url = https://github.com/klen/python-mode.git
 [submodule ".vim/bundle/surround"]
 	path = .vim/bundle/surround
 	url = https://github.com/tpope/vim-surround.git
@@ -51,7 +51,7 @@
 	url = https://github.com/scrooloose/nerdtree.git
 [submodule ".vim/bundle/vim-gitgutter"]
 	path = .vim/bundle/vim-gitgutter
-	url = git://github.com/airblade/vim-gitgutter.git
+	url = https://github.com/airblade/vim-gitgutter.git
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git

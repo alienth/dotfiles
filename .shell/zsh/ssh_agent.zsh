@@ -6,7 +6,7 @@ function find_ssh_auth_sock() {
   setopt nonomatch
 
   local sockets
-  sockets=(/tmp/keyring-*/ssh /run/user/*/keyring-*/ssh)
+  sockets=(/run/user/*/keyring/ssh)
   # Check if lsof exists
   if command -v lsof &> /dev/null && (($#sockets)); then
 

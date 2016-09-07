@@ -15,7 +15,7 @@ alias sdud='sudo du -xch . --max-depth=1 | sort -h'
 
 alias info='info --vi-keys'
 
-which systemd &>/dev/null
+which systemctl &>/dev/null
 if [[ $? -eq 0 ]]; then
     which start &>/dev/null
     if [[ $? -eq 1 ]]; then

@@ -30,5 +30,6 @@ vi () {
                         return
                 fi
 	fi
+        $VI "$@";
 }
 

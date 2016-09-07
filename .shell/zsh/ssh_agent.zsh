@@ -5,11 +5,13 @@ function find_ssh_auth_sock() {
   emulate -L zsh
   setopt nonomatch
 
+  local sockets
   sockets=(/tmp/keyring-*/ssh /run/user/*/keyring-*/ssh)
   # Check if lsof exists
   if command -v lsof &> /dev/null && (($#sockets)); then
 
     # Search for keyring sockets and use them if they're open
+    local file
     for file in $sockets; do
       if [[ ( -S $file ) && $file =~ '/run/user/.*' ]]; then
         export SSH_AUTH_SOCK=$file

@@ -17,10 +17,18 @@ vi () {
 		return
 	fi
 
-	if [ -w "$1" ]; then
-		$VI "$@";
-	else
-		sudowarn $VI "$@";
+	if [[ ! -w "$1" && -f "$1" ]]; then
+                echo -n "Not writable. Become root?"
+                local foo
+                read -q foo
+                echo
+                if [[ $foo = "y" ]]; then
+                        sudo $VI "$@";
+                        return
+                else
+        		$VI "$@";
+                        return
+                fi
 	fi
 }
 

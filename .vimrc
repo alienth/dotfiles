@@ -113,6 +113,7 @@ autocmd BufReadPost *
 let g:ctrlp_custom_ignore = '\v/(\.config|\.cache|\.local|\.npm|\.minecraft|\.git|\.svn|\.oh-my-zsh|env)$'
 
 let g:notes_directories = ['~/notes']
+let g:notes_word_boundaries = 1
 
 let g:pymode = 1
 let g:pymode_options = 1

@@ -39,10 +39,10 @@
 	url = https://github.com/AndrewRadev/splitjoin.vim.git
 [submodule ".vim/bundle/misc"]
 	path = .vim/bundle/misc
-	url = https://github.com/alienth/vim-misc.git
+	url = https://github.com/xolox/vim-misc.git
 [submodule ".vim/bundle/notes"]
 	path = .vim/bundle/notes
-	url = https://github.com/alienth/vim-notes.git
+	url = https://github.com/xolox/vim-notes.git
 [submodule ".vim/bundle/vim-go"]
 	path = .vim/bundle/vim-go
 	url = https://github.com/fatih/vim-go.git

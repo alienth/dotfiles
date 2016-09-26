@@ -114,6 +114,7 @@ let g:ctrlp_custom_ignore = '\v/(\.config|\.cache|\.local|\.npm|\.minecraft|\.gi
 
 let g:notes_directories = ['~/notes']
 let g:notes_word_boundaries = 1
+let g:notes_conceal_url = 0
 
 let g:pymode = 1
 let g:pymode_options = 1

@@ -8,6 +8,8 @@ source! /home/alienth/.vimperatorrc.local
 
 set gui+=nonavigation
 
+" workaround for issue 591 affecting fx49
+js services.services.autoCompleteSearch.class_="@mozilla.org/autocomplete/search;1?name=unifiedcomplete"
 
 " text fields on google docs are not insert-mode, so we have to ignore most keys
 :ignorekeys add -except=<C-n>,<C-p> docs\.google\.com

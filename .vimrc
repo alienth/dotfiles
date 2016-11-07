@@ -257,6 +257,10 @@ endif
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 
+" Preserve folding when a file is reopened
+autocmd BufWinLeave .* mkview
+autocmd BufWinEnter .* silent loadview
+
 "------------------------------------------------------------------------------
 " Fugitive
 "------------------------------------------------------------------------------

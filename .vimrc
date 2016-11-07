@@ -261,6 +261,10 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 autocmd BufWinLeave .* mkview
 autocmd BufWinEnter .* silent loadview
 
+let g:ctrlp_map = '<leader>p'
+nmap <C-n> :bnext<cr>
+nmap <C-p> :bprev<cr>
+
 "------------------------------------------------------------------------------
 " Fugitive
 "------------------------------------------------------------------------------

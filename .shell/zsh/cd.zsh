@@ -1,3 +1,4 @@
+#TODO replace this with chpwd setup
 cd () {
 
     builtin cd "$*"

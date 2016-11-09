@@ -59,6 +59,7 @@ set noerrorbells  " No noise.
 set laststatus=2  " Always show status line.
 
 set foldmethod=indent
+set foldlevelstart=20
 
 set hlsearch   " hilight items found via search
 set incsearch  " show matches when typing search cmd

@@ -291,3 +291,10 @@ au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>e <Plug>(go-rename)
 
 au FileType go :TagbarOpen
+
+"------------------------------------------------------------------------------
+" eclim
+"------------------------------------------------------------------------------
+" TODO: Only load these if eclim is loaded?
+au FileType java nmap <leader>gd :<C-u>call eclim#java#doc#Preview()<CR>
+au FileType java nnoremap <buffer> <silent> gd :JavaSearchContext<cr>

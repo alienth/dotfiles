@@ -258,6 +258,10 @@ endif
 " https://github.com/c9s/perlomni.vim
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
+if !exists('g:neocomplete#force_omni_input_patterns')
+  let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.java = '\k\.\k*'
 
 " Preserve folding when a file is reopened
 autocmd BufWinLeave .* mkview
@@ -298,3 +302,5 @@ au FileType go :TagbarOpen
 " TODO: Only load these if eclim is loaded?
 au FileType java nmap <leader>gd :<C-u>call eclim#java#doc#Preview()<CR>
 au FileType java nnoremap <buffer> <silent> gd :JavaSearchContext<cr>
+
+let g:EclimCompletionMethod = "omnifunc"

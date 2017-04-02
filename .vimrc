@@ -100,8 +100,6 @@ map <F5> :DiffOrig<CR>
 au FileType python syn match dangerZone /\%79v.\+/ display
 au FileType python hi def link dangerZone error
 
-au FileType notes silent! colorscheme slate
-
 " Return to last edit position when opening files
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -112,11 +110,6 @@ autocmd BufReadPost *
 "
 " Have ctrlp ignore a bunch of shit we don't want to search
 let g:ctrlp_custom_ignore = '\v/(\.config|\.cache|\.local|\.npm|\.minecraft|\.git|\.svn|\.oh-my-zsh|env)$'
-
-let g:notes_directories = ['~/notes']
-let g:notes_word_boundaries = 1
-let g:notes_conceal_url = 0
-let g:notes_smart_quotes = 0
 
 let g:pymode = 1
 let g:pymode_options = 1
@@ -176,8 +169,6 @@ let NERDTreeShowLineNumbers = 1
 let NERDTreeAutoCenter = 1
 " Toggle on/off
 nmap <leader>o :NERDTreeToggle<cr>
-
-autocmd FileType notes NeoCompleteLock
 
 " By default syntax-highlighting for Functions, Methods and Structs is
 " disabled.
@@ -307,9 +298,21 @@ let g:EclimCompletionMethod = "omnifunc"
 
 
 "------------------------------------------------------------------------------
+" notes stuff
+"------------------------------------------------------------------------------
+autocmd FileType notes NeoCompleteLock
+
+let g:notes_directories = ['~/notes']
+let g:notes_word_boundaries = 1
+let g:notes_conceal_url = 0
+let g:notes_smart_quotes = 0
+
+
+"------------------------------------------------------------------------------
 " other
 "------------------------------------------------------------------------------
 
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+

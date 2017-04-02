@@ -307,6 +307,7 @@ let g:notes_word_boundaries = 1
 let g:notes_conceal_url = 0
 let g:notes_smart_quotes = 0
 
+hi Title term=bold cterm=bold ctermfg=3 gui=bold guifg=#ffff60
 
 "------------------------------------------------------------------------------
 " other

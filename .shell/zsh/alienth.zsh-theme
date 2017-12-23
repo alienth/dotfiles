@@ -13,7 +13,7 @@ function box_name {
 local box_name=$(box_name)
 
 function container_color {
-    (grep /docker/ /proc/1/cgroup >/dev/null && echo red) || echo green
+    (grep -E '(/docker/|/kubepods/)' /proc/1/cgroup >/dev/null && echo red) || echo green
 }
 local container_color=$(container_color)
 

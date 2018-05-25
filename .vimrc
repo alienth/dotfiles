@@ -70,6 +70,10 @@ set hidden " hide buffer when it becomes abandoned
 
 set lazyredraw " don't update screen when executing macros
 
+" How quickly swapfile is written after nothing being typed.
+" Impacts git-gutter update times.
+set updatetime=100
+
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
 " Only define it when not defined already.

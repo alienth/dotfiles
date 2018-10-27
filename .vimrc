@@ -272,7 +272,7 @@ nmap <C-p> :bprev<cr>
 map <leader>gdi :Gdiff<cr>
 map <leader>gst :Gstatus<cr>
 map <leader>dup :diffupdate<cr>
-map <leader>gc :Gcom<cr>
+map <leader>gc :Gcom -v<cr>
 map <leader>wip :Gwr<cr>:Gcom -m wip<cr>
 
 

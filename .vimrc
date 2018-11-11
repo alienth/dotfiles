@@ -95,7 +95,6 @@ map <C-l> <C-W>l
 " Decrease timeoutlen for key sequences
 set timeoutlen=500
 
-set pastetoggle=<F2>
 map <F3> :set nonu lcs=
 map <F5> :DiffOrig<CR>
 

@@ -188,8 +188,11 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-" pythoncomplete requires vim be compiled with +python
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+if has('python3')
+  autocmd FileType python setlocal omnifunc=python3complete#Complete
+elseif has('python')
+  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+endif
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Enable heavy omni completion.

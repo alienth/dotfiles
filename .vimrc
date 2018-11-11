@@ -26,7 +26,10 @@ set smarttab      " insert shiftwidth number of blanks in front of a line
 set expandtab     " use blanks instead of literal <Tab>s
 set softtabstop=4 " number of spaces a soft-<Tab> inserts when editing
 set shiftwidth=4  " number of spaces to use for each autoindent
+set shiftround    " Round indent to multiple of shiftwidth.
 set tabstop=8     " literal tabs are 8 spaces
+
+setglobal commentstring=#\ %s " Default to # for comments.
 
 set backspace=2   " Backspace over everything (indents, EOL, start of line) in insert mode
 set nowrap        " Line wrapping off
@@ -35,15 +38,23 @@ set ruler         " Ruler on (line number info in lower right)
 
 set cpoptions+=$  " Change-word shows deleted chars
 
-set clipboard+=unnamed  " Yanks go on clipboard instead. Only works if ':echo has('clipboard')' is 1.
+if exists('+clipboard')
+  set clipboard=unnamedplus  " Yanks go to the ctrl-c '+' clipboard register
+endif
 
 set wildmenu
 set wildmode=list:longest,full
+
+set mouse=nvi " Allow mouse in normal, visual, insert mode.
 
 " Backups & Files
 set backup                    " Enable creation of backup files.
 set backupdir=~/.vim/backup/  " Where backups will go.
 set directory=~/.vim/tmp      " Where temporary files will go.
+if exists('+undofile')
+  set undofile                  " Use a persistent undofile
+  set undodir=~/.vim/undo/
+endif
 
 " Visual stuff
 set showmatch  " When a bracket is inserted, jump to the matching bracket.
@@ -55,12 +66,17 @@ set novisualbell  " No blinking the screen upon bells.
 set noerrorbells  " No noise.
 set laststatus=2  " Always show status line.
 set scrolloff=4   " Minimal number of screen lines to keep above and below cursor.
+set breakindent   " When long lines are visually wrapped, maintain indentations.
+set showbreak=\ + " Add a visual indicator of breakindent.
+set linebreak     " Don't visually break in the middle of words.
+set virtualedit=block   " Allow out-of-bounds cursor in visual block mode.
 
 set foldmethod=indent
 set foldlevelstart=20
 
 set hlsearch   " hilight items found via search
 set incsearch  " show matches when typing search cmd
+set smartcase  " Case insensitive searches become sensitive with capitals.
 
 set showcmd " display incomplete commands in laststatus.
             " For example, typing the start of a multi-key binding will

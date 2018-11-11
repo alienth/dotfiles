@@ -115,46 +115,64 @@ autocmd BufReadPost *
 
 " Use neocomplete.
 let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#enable_smart_case = 1 " When matching for completion, ignore
+					" case *unless* input includes a
+					" capital letter.
+					
 " Set minimum syntax keyword length.
 let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
-" Define dictionary.
+" This disables neocomplete in *ku* buffers, for the `ku` plugin.
+" I don't use this so commenting it out.
+" let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+
+" Define dictionaries for certain filetypes.
 let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'default' : '',
     \ 'vimshell' : $HOME.'/.vimshell_hist',
     \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
+    \ }
 
-" Define keyword.
+" Wipe out any predefined keyword patterns
 if !exists('g:neocomplete#keyword_patterns')
     let g:neocomplete#keyword_patterns = {}
 endif
+" A keyword is something that is a candidate for completion. neocomplete
+" automatically caches keywords matching the defined pattern. In this case,
+" we're matching words which are fully word-characters.
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
-" Plugin key-mappings.
+" Undo any pending completion and seek back to where we started.
 inoremap <expr><C-g>     neocomplete#undo_completion()
+
+" Complete the candidates up to the longest-common-string present.
 inoremap <expr><C-l>     neocomplete#complete_common_string()
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
+" Map <CR> to an expression evaluation (see <C-R> for '=' case)
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
+  " If the popupmenu is visible, use <C-y> to close the popup menu, and press
+  " enter. (see copmlete_CTRL-Y)
   return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
   " For no inserting <CR> key.
   "return pumvisible() ? "\<C-y>" : "\<CR>"
 endfunction
+
+
 " <TAB>: completion.
+" If the popupmenu is visible, hit Ctrl-n to iterate to next kw.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+
 " Close popup by <Space>.
 "inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
 
-" AutoComplPop like behavior.
+" Automatically select the first candidate.
 "let g:neocomplete#enable_auto_select = 1
 
 " Shell like behavior(not recommended).
@@ -164,6 +182,7 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 "inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
 
 " Enable omni completion.
+" Omnicomplete allows vim to guess what type of item we are completing.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS

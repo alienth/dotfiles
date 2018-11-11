@@ -188,11 +188,11 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-if has('python3')
-  autocmd FileType python setlocal omnifunc=python3complete#Complete
-elseif has('python')
-  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-endif
+"if has('python3')
+"  autocmd FileType python setlocal omnifunc=python3complete#Complete
+"elseif has('python')
+"  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+"endif
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Enable heavy omni completion.
@@ -211,6 +211,7 @@ if !exists('g:neocomplete#force_omni_input_patterns')
   let g:neocomplete#force_omni_input_patterns = {}
 endif
 let g:neocomplete#force_omni_input_patterns.java = '\k\.\k*'
+let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
 
 
 "------------------------------------------------------------------------------
@@ -306,7 +307,7 @@ au FileType go nmap <Leader>e <Plug>(go-rename)
 "------------------------------------------------------------------------------
 " python-mode
 "------------------------------------------------------------------------------
-let g:pymode = 1
+let g:pymode = 0
 let g:pymode_options = 1
 let g:pymode_indent = 1
 let g:pymode_folding = 1
@@ -329,6 +330,25 @@ let g:pymode_syntax_all = 1
 " Disable the vertical red bar at the 80th column.
 let g:pymode_options_colorcolumn = 0
 
+"------------------------------------------------------------------------------
+" jedi-vim
+"------------------------------------------------------------------------------
+" We disable this stuff since we're relying upon neocomplete.
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+
+" Don't automatically close docstring in preview window. Fairly jarring.
+let g:jedi#auto_close_doc = 0
+
+let g:jedi#goto_assignments_command = "gd"
+let g:jedi#goto_definitions_command = "gD"
+
+" Disable showing call signatures, as it inserts data in the line above the
+" edited line, causing weirdness and Ctrl-C to leave garbage (unless you remap
+" it).
+let g:jedi#show_call_signatures = 0
+
+autocmd FileType python setlocal omnifunc=jedi#completions
 
 "------------------------------------------------------------------------------
 " eclim

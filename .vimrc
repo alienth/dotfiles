@@ -322,6 +322,7 @@ hi Title term=bold cterm=bold ctermfg=3 gui=bold guifg=#ffff60
 " other
 "------------------------------------------------------------------------------
 
+" When I press F10, show hilight info for object under cursor
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>

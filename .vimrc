@@ -183,9 +183,12 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 " Enable omni completion.
 " Omnicomplete allows vim to guess what type of item we are completing.
+" The functions referred to here come default with vim, and can be found in
+" /usr/share/vim/vim80/autoload
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+" pythoncomplete requires vim be compiled with +python
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 

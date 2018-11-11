@@ -95,9 +95,6 @@ map <C-l> <C-W>l
 " Decrease timeoutlen for key sequences
 set timeoutlen=500
 
-map <F3> :set nonu lcs=
-map <F5> :DiffOrig<CR>
-
 " autocommands
 
 au FileType python syn match dangerZone /\%79v.\+/ display

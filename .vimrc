@@ -88,6 +88,9 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+nmap <C-n> :bnext<cr>
+nmap <C-p> :bprev<cr>
+
 set timeoutlen=500 " The time in milliseconds that is waited for a key code or
 		   " mapped key sequence to complete.
 
@@ -96,86 +99,20 @@ set timeoutlen=500 " The time in milliseconds that is waited for a key code or
 au FileType python syn match dangerZone /\%79v.\+/ display
 au FileType python hi def link dangerZone error
 
+" Preserve folding when a file is reopened
+autocmd BufWinLeave .* mkview
+autocmd BufWinEnter .* silent loadview
+
 " Return to last edit position when opening files, except on git commit
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") && &ft != 'gitcommit' |
      \   exe "normal! g`\"" |
      \ endif
 
-" ----- plugin options below
-"
-" Have ctrlp ignore a bunch of shit we don't want to search
-let g:ctrlp_custom_ignore = '\v/(\.config|\.cache|\.local|\.npm|\.minecraft|\.git|\.svn|\.oh-my-zsh|env)$'
+"------------------------------------------------------------------------------
+" neocomplete
+"------------------------------------------------------------------------------
 
-let g:pymode = 1
-let g:pymode_options = 1
-let g:pymode_indent = 1
-let g:pymode_folding = 1
-let g:pymode_motion = 1
-let g:pymode_doc = 1
-
-let g:pymode_lint = 0
-let g:pymode_lint_checkers = ['pep8', 'pep257']
-let g:pymode_trim_whitespaces = 0
-
-let g:pymode_rope = 0
-let g:pymode_rope_completion = 0
-let g:pymode_rope_complete_on_dot = 0
-let g:pymode_rope_completion_bind = '<C-Space>'
-let g:pymode_rope_goto_definition_bind = '<C-c>g'
-let g:pymode_syntax = 1
-let g:pymode_syntax_all = 1
-let g:pymode_rope_goto_definition_cmd = 'e'
-
-
-let g:neocomplete#enable_at_startup = 1
-
-nmap <leader>tb :TagbarToggle<CR>
-let g:tagbar_type_go = {  
-    \ 'ctagstype' : 'go',
-    \ 'kinds'     : [
-        \ 'p:package',
-        \ 'i:imports:1',
-        \ 'c:constants',
-        \ 'v:variables',
-        \ 't:types',
-        \ 'n:interfaces',
-        \ 'w:fields',
-        \ 'e:embedded',
-        \ 'm:methods',
-        \ 'r:constructor',
-        \ 'f:functions'
-    \ ],
-    \ 'sro' : '.',
-    \ 'kind2scope' : {
-        \ 't' : 'ctype',
-        \ 'n' : 'ntype'
-    \ },
-    \ 'scope2kind' : {
-        \ 'ctype' : 't',
-        \ 'ntype' : 'n'
-    \ },
-    \ 'ctagsbin'  : 'gotags',
-    \ 'ctagsargs' : '-sort -silent'
-\ }
-
-" Make sure that when NT root is changed, Vim's pwd is also updated
-let NERDTreeChDirMode = 2
-let NERDTreeShowLineNumbers = 1
-let NERDTreeAutoCenter = 1
-" Toggle on/off
-nmap <leader>o :NERDTreeToggle<cr>
-
-" By default syntax-highlighting for Functions, Methods and Structs is
-" disabled.
-" Let's enable them!
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-
-"Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
 " Use neocomplete.
 let g:neocomplete#enable_at_startup = 1
 " Use smartcase.
@@ -250,13 +187,64 @@ if !exists('g:neocomplete#force_omni_input_patterns')
 endif
 let g:neocomplete#force_omni_input_patterns.java = '\k\.\k*'
 
-" Preserve folding when a file is reopened
-autocmd BufWinLeave .* mkview
-autocmd BufWinEnter .* silent loadview
+"Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
 
+
+"------------------------------------------------------------------------------
+" tagbar
+"------------------------------------------------------------------------------
+
+nmap <leader>tb :TagbarToggle<CR>
+let g:tagbar_type_go = {  
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ }
+
+
+"------------------------------------------------------------------------------
+" NERDTree
+"------------------------------------------------------------------------------
+
+" Make sure that when NT root is changed, Vim's pwd is also updated
+let NERDTreeChDirMode = 2
+let NERDTreeShowLineNumbers = 1
+let NERDTreeAutoCenter = 1
+" Toggle on/off
+nmap <leader>o :NERDTreeToggle<cr>
+
+
+"------------------------------------------------------------------------------
+" ctrlp
+"------------------------------------------------------------------------------
+
+" Have ctrlp ignore a bunch of shit we don't want to search
+let g:ctrlp_custom_ignore = '\v/(\.config|\.cache|\.local|\.npm|\.minecraft|\.git|\.svn|\.oh-my-zsh|env)$'
 let g:ctrlp_map = '<leader>p'
-nmap <C-n> :bnext<cr>
-nmap <C-p> :bprev<cr>
 
 "------------------------------------------------------------------------------
 " Fugitive
@@ -276,6 +264,14 @@ nmap <leader>hr <Plug>GitGutterUndoHunk
 "------------------------------------------------------------------------------
 " vim-go
 "------------------------------------------------------------------------------
+
+" By default syntax-highlighting for Functions, Methods and Structs is
+" disabled.
+" Let's enable them!
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
@@ -287,6 +283,32 @@ au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>e <Plug>(go-rename)
 
 au FileType go :TagbarOpen
+
+"------------------------------------------------------------------------------
+" python-mode
+"------------------------------------------------------------------------------
+let g:pymode = 1
+let g:pymode_options = 1
+let g:pymode_indent = 1
+let g:pymode_folding = 1
+let g:pymode_motion = 1
+let g:pymode_doc = 1
+
+let g:pymode_lint = 0
+let g:pymode_lint_checkers = ['pep8', 'pep257']
+let g:pymode_trim_whitespaces = 0
+
+let g:pymode_rope = 0
+let g:pymode_rope_completion = 1
+let g:pymode_rope_complete_on_dot = 0
+let g:pymode_rope_completion_bind = '<C-Space>'
+let g:pymode_rope_goto_definition_bind = 'gd'
+let g:pymode_syntax = 1
+let g:pymode_syntax_all = 1
+let g:pymode_rope_goto_definition_cmd = 'e'
+" Disable the vertical red bar at the 80th column.
+let g:pymode_options_colorcolumn = 0
+
 
 "------------------------------------------------------------------------------
 " eclim
@@ -301,7 +323,8 @@ let g:EclimCompletionMethod = "omnifunc"
 "------------------------------------------------------------------------------
 " notes stuff
 "------------------------------------------------------------------------------
-autocmd FileType notes NeoCompleteLock
+
+autocmd FileType notes NeoCompleteLock " Disable neocomplete autocomplete in notes.
 
 let g:notes_directories = ['~/notes']
 let g:notes_word_boundaries = 1

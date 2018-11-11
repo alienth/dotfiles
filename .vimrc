@@ -321,9 +321,10 @@ let g:pymode_rope_completion = 1
 let g:pymode_rope_complete_on_dot = 0
 let g:pymode_rope_completion_bind = '<C-Space>'
 let g:pymode_rope_goto_definition_bind = 'gd'
+let g:pymode_rope_goto_definition_cmd = 'e'
+
 let g:pymode_syntax = 1
 let g:pymode_syntax_all = 1
-let g:pymode_rope_goto_definition_cmd = 'e'
 " Disable the vertical red bar at the 80th column.
 let g:pymode_options_colorcolumn = 0
 

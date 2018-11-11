@@ -104,9 +104,9 @@ map <F5> :DiffOrig<CR>
 au FileType python syn match dangerZone /\%79v.\+/ display
 au FileType python hi def link dangerZone error
 
-" Return to last edit position when opening files
+" Return to last edit position when opening files, except on git commit
 autocmd BufReadPost *
-     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \ if line("'\"") > 0 && line("'\"") <= line("$") && &ft != 'gitcommit' |
      \   exe "normal! g`\"" |
      \ endif
 

@@ -36,6 +36,10 @@ set nowrap        " Line wrapping off
 set nu            " Line numbers on
 set ruler         " Ruler on (line number info in lower right)
 
+set signcolumn=yes " Always enable the sign column.
+                   " Without this, we get weird jumpiness when signs are added
+                   " and removed by gitgutter.
+
 set cpoptions+=$  " Change-word shows deleted chars
 
 if exists('+clipboard')

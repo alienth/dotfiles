@@ -80,13 +80,13 @@ set smartcase  " Case insensitive searches become sensitive with capitals.
 
 set showcmd " display incomplete commands in laststatus.
             " For example, typing the start of a multi-key binding will
-	    " show each successive key typed in the lower right. Useful
-	    " for identifying when you're starting a command.
+            " show each successive key typed in the lower right. Useful
+            " for identifying when you're starting a command.
 
 set hidden  " When you 'abandon' a buffer (i.e., when you no longer have a
             " buffer displayed), simply hide it rather than unloading it.
-	    " Without this, hiding a modified buffer would error due to that
-	    " buffer not being saved.
+            " Without this, hiding a modified buffer would error due to that
+            " buffer not being saved.
 
 set lazyredraw " don't update screen when in the middle of executing macros
 
@@ -108,7 +108,7 @@ nmap <C-n> :bnext<cr>
 nmap <C-p> :bprev<cr>
 
 set timeoutlen=500 " The time in milliseconds that is waited for a key code or
-		   " mapped key sequence to complete.
+                   " mapped key sequence to complete.
 
 " autocommands
 
@@ -132,9 +132,9 @@ autocmd BufReadPost *
 " Use neocomplete.
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1 " When matching for completion, ignore
-					" case *unless* input includes a
-					" capital letter.
-					
+                                        " case *unless* input includes a
+                                        " capital letter.
+
 " Set minimum syntax keyword length.
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 
@@ -149,7 +149,7 @@ let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'scheme' : $HOME.'/.gosh_completions'
     \ }
 
-" Wipe out any predefined keyword patterns
+" Initialize keyword_patterns.
 if !exists('g:neocomplete#keyword_patterns')
     let g:neocomplete#keyword_patterns = {}
 endif
@@ -404,6 +404,6 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 " Only define it when not defined already.
 if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
+  \ | wincmd p | diffthis
 endif
 

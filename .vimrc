@@ -22,7 +22,7 @@ set nocompatible  " Clean out any compat. Necessary? FIXME
 
 set smartindent   " try to auto-add indents where they make sense
 set autoindent    " copy indent from current line when starting new line
-set smarttab      " insert shiftwidth number of blanks in front of a line
+set smarttab      " shiftwidth blanks at line start, softtabstop elsewhere
 set expandtab     " use blanks instead of literal <Tab>s
 set softtabstop=4 " number of spaces a soft-<Tab> inserts when editing
 set shiftwidth=4  " number of spaces to use for each autoindent

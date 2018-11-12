@@ -4,3 +4,5 @@
 	signingkey = C69C906B
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset - %C(bold blue)<%an>%Creset %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit
+[branch]
+	autoSetupRebase = always

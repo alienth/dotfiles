@@ -119,6 +119,9 @@ nmap <leader>ew :e %%
 set timeoutlen=500 " The time in milliseconds that is waited for a key code or
                    " mapped key sequence to complete.
 
+" Use a darker red background for diff'd text.
+hi DiffText term=reverse cterm=bold ctermbg=52
+
 " autocommands
 
 au FileType python syn match dangerZone /\%79v.\+/ display

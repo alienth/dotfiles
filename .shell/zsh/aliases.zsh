@@ -13,6 +13,8 @@ alias grep='grep --color=auto'
 alias dud='du -xch . --max-depth=1 | sort -h'
 alias sdud='sudo du -xch . --max-depth=1 | sort -h'
 
+alias gg='git grep'
+
 alias info='info --vi-keys'
 
 which systemctl &>/dev/null

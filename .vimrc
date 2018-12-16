@@ -111,6 +111,11 @@ map <C-l> <C-W>l
 nmap <C-n> :bnext<cr>
 nmap <C-p> :bprev<cr>
 
+" 'Edit nearby' - edit command prefilled with the dir of the file currently
+" being edited.
+cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
+nmap <leader>ew :e %%
+
 set timeoutlen=500 " The time in milliseconds that is waited for a key code or
                    " mapped key sequence to complete.
 

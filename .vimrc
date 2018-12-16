@@ -304,7 +304,7 @@ map <leader>gst :Gstatus<cr>
 map <leader>dup :diffupdate<cr>
 map <leader>gc :w<cr>:Gcom -v<cr>
 map <leader>wip :Gwr<cr>:Gcom -m wip<cr>
-
+map <leader>gg :Gg 
 
 "------------------------------------------------------------------------------
 " gitgutter

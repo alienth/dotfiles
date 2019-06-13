@@ -1,5 +1,4 @@
 unalias -a
-alias dpkg-purge="sudowarn dpkg --purge"
 alias ..='cd ..'
 
 alias psgrep='ps auxwww | grep'
@@ -9,14 +8,4 @@ alias sb='sudo bash'
 if [ "$TERM" != "dumb" ] && [ -x /usr/bin/dircolors ]; then
     eval "`dircolors -b`"
     alias ls='echo; ls --color=auto'
-    #alias dir='ls --color=auto --format=vertical'
-    #alias vdir='ls --color=auto --format=long'
 fi
-
-# some more ls aliases
-#alias ll='ls -l'
-#alias la='ls -A'
-#alias l='ls -CF'
-
-
-export RI="-T --format ansi"

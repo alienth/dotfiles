@@ -5,6 +5,10 @@ call pathogen#helptags()
 
 filetype plugin indent on  " Automatically detect file types.
 
+set notitle
+" Disable window titling in X-aware vim.
+set noicon
+
 syntax on
 set background=dark
 

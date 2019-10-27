@@ -3,6 +3,10 @@
 # sane globbing failure
 setopt cshnullglob
 
+# If this is on, any parameter passed to `cd` that happens to be variable is
+# expanded as such. I hate this.
+unsetopt cdablevars
+
 bindkey -v
 bindkey -M viins "^[[A" up-line-or-history
 bindkey -M viins "^[[B" down-line-or-history

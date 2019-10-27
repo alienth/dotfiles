@@ -1,13 +1,12 @@
-if [ `which vim` ]; then
-	VI=`which vim`
+if [ -x $(which vim) ]; then
+	VI=$(which vim)
 else
-	VI=`which vi`
+	VI=$(which vi)
 fi
 
 #complete -c vipath
 vipath () {
-	FILE=`which $1`
-	$VI $FILE
+        $VI $(which $1)
 }
 
 

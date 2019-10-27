@@ -10,10 +10,12 @@
 function box_name {
     [ -f ~/.box-name ] && cat ~/.box-name || hostname -s
 }
+local box_name=$(box_name)
 
 function container_color {
     (grep /docker/ /proc/1/cgroup >/dev/null && echo red) || echo green
 }
+local container_color=$(container_color)
 
 local ret_status="%(?:%{$fg_bold[green]%}^_^ :%{$fg_bold[red]%}O_O %s)%{$reset_color%}"
 
@@ -32,7 +34,7 @@ PROMPT="
 (${current_dir}) \
 ${ret_status}\
 ${git_info}
-%{$fg[white]%}%n%{$fg[$(container_color)]%}@$(box_name)%{$reset_color%} \
+%{$fg[white]%}%n%{$fg[${container_color}]%}@${box_name}%{$reset_color%} \
 %{$terminfo[bold]$fg[white]%}$ %{$reset_color%}"
 
 #if [[ "$(whoami)" == "root" ]]; then

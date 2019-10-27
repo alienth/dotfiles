@@ -18,15 +18,12 @@ vi () {
   fi
 
   if [[ ! -w "$1" && -f "$1" ]]; then
-    echo -n "Not writable. Become root?"
-    local foo
-    read -q foo
-    echo
-    if [[ $foo = "y" ]]; then
+    echo -n "Not writable. sudo?:"
+    local INPUT
+    read -sq INPUT
+    if [[ "$INPUT" == "y" ]]; then
+      echo
       sudo $VI "$@";
-      return
-    else
-      $VI "$@";
       return
     fi
   fi

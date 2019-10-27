@@ -67,5 +67,3 @@ fi
 if [ "$EUID" = "0" ]; then
     PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin
 fi
-
-source ~/.shell/zsh/zshrc

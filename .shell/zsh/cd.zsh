@@ -1,25 +1,23 @@
-#TODO replace this with chpwd setup
 cd () {
-
-    builtin cd "$*"
-    if [ $? -ne 0 ]; then 
-        if [ ! -x "$1" ] && [ -d "$1" ]; then
-                echo -n "Cannot access dir, become root? ";
-                read foo
-                if [[ $foo = "y" ]] || [[ $foo = "Y" ]]; then
-                        sudo zsh 
-                        return
-                else
-                        builtin cd "$*"
-                        return
-                fi
-        fi
-    else
-                ls --color=auto
+  local STATUS
+  builtin cd "$*"
+  STATUS=$?
+  if [[ $STATUS -ne 0 ]]; then
+    if [[ ! -x "$1" ]] && [[ -d "$1" ]]; then
+      echo "Cannot access dir. sudo? ";
+      local INPUT
+      read -qs INPUT
+      if [[ $INPUT = "y" ]]; then
+        sudo /bin/sh -c 'cd "'$*'"; exec zsh'
+        return
+      else
+        return $STATUS
+      fi
     fi
+  fi
 }
 
-cdd () {
-    builtin cd "$*"
+# This hook is called by zsh whenever the CWD changes.
+chpwd () {
+  ls
 }
-

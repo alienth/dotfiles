@@ -49,17 +49,3 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # ~~~~~~~~~~~~ END OH-MY-ZSH CONFIGURATION ~~~~~~~~~~~~
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# set PATH so it includes user's private bin if it exists
-if [ -d $HOME/bin ] ; then
-    PATH=$HOME/bin:"${PATH}"
-fi
-
-# If we are root, get root paths
-if [ "$EUID" = "0" ]; then
-    PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin
-fi

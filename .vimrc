@@ -5,6 +5,9 @@ call pathogen#helptags()
 
 filetype plugin indent on  " Automatically detect file types.
 
+" Auto-load the man ftplugin
+source $VIMRUNTIME/ftplugin/man.vim
+
 set notitle
 " Disable window titling in X-aware vim.
 set noicon

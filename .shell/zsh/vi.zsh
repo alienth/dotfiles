@@ -1,5 +1,3 @@
-export MANPAGER="/bin/sh -c 'col -b | vim -c '\''set ft=man nomod nolist signcolumn=no nonu'\'' -'"
-
 if [ -x $(which vim) ]; then
   VI=$(which vim)
 else
@@ -30,3 +28,6 @@ vi () {
   $VI "$@";
 }
 
+man () {
+  vim -c ":Man $*" -c 'silent only'
+}

@@ -299,6 +299,7 @@ nmap <leader>o :NERDTreeToggle<cr>
 " Have ctrlp ignore a bunch of shit we don't want to search
 let g:ctrlp_custom_ignore = '\v/(\.config|\.cache|\.local|\.npm|\.minecraft|\.git|\.svn|\.oh-my-zsh|env)$'
 let g:ctrlp_map = '<leader>p'
+let g:ctrlp_clear_cache_on_exit = 0
 
 "------------------------------------------------------------------------------
 " Fugitive

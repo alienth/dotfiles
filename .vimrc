@@ -300,6 +300,7 @@ nmap <leader>o :NERDTreeToggle<cr>
 let g:ctrlp_custom_ignore = '\v/(\.config|\.cache|\.local|\.npm|\.minecraft|\.git|\.svn|\.oh-my-zsh|env)$'
 let g:ctrlp_map = '<leader>p'
 let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
 
 "------------------------------------------------------------------------------
 " Fugitive

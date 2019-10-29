@@ -23,6 +23,6 @@ else
   export EDITOR=/usr/bin/vim
 fi
 
-if [[ "$COLORTERM" == "mate-terminal" || "$COLORTERM" == "truecolor" ]]; then
+if [[ ("$COLORTERM" == "mate-terminal" || "$COLORTERM" == "truecolor") && "$TERM" == "xterm" ]]; then
   export TERM=xterm-256color
 fi

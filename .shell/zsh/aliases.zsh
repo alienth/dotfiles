@@ -16,3 +16,7 @@ alias sdud='sudo du -xch . --max-depth=1 | sort -h'
 alias gg='git grep'
 
 alias info='info --vi-keys'
+
+if [[ -x /usr/bin/htop ]]; then
+  alias top='htop'
+fi

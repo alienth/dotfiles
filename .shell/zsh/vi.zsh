@@ -1,17 +1,17 @@
 if [ command -v vim &>/dev/null ]; then
-  VI=$(command -v vim)
+  export VISUAL=$(command -v vim)
 else
-  VI=$(command -v vi)
+  export VISUAL=$(command -v vi)
 fi
 
 #complete -c vipath
 vipath () {
-        $VI $(command -v $1)
+        $VISUAL $(command -v $1)
 }
 
 vi () {
   if [ ! -d "$1" ] && [ ! -f "$1" ]; then
-    $VI "$@";
+    $VISUAL "$@";
     return
   fi
 
@@ -21,13 +21,13 @@ vi () {
     read -sq INPUT
     if [[ "$INPUT" == "y" ]]; then
       echo
-      sudo $VI "$@";
+      sudo $VISUAL "$@";
       return
     fi
   fi
-  $VI "$@";
+  $VISUAL "$@";
 }
 
 man () {
-  /usr/bin/man -w $* && vim -c ":Man $*" -c 'silent only'
+  /usr/bin/man -w $* && $VISUAL -c ":Man $*" -c 'silent only'
 }

@@ -1,12 +1,12 @@
-if [ -x $(which vim) ]; then
-  VI=$(which vim)
+if [ command -v vim &>/dev/null ]; then
+  VI=$(command -v vim)
 else
-  VI=$(which vi)
+  VI=$(command -v vi)
 fi
 
 #complete -c vipath
 vipath () {
-        $VI $(which $1)
+        $VI $(command -v $1)
 }
 
 vi () {

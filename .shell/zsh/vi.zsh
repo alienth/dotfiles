@@ -29,5 +29,5 @@ vi () {
 }
 
 man () {
-  vim -c ":Man $*" -c 'silent only'
+  /usr/bin/man -w $* && vim -c ":Man $*" -c 'silent only'
 }

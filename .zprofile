@@ -19,7 +19,6 @@ if [[ -x /usr/bin/screen ]]; then
     screen -ls
     local INPUT
     vared -p "Outer(1) or Inner(2)?: " -c INPUT
-    echo 'Outer(1) or Inner(2)?'
     if [[ "$INPUT" == "1" ]]; then
       screen -c .masterscreen -xR outer
     elif [[ "$INPUT" == "2" ]]; then

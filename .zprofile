@@ -12,6 +12,11 @@ if [[ $TERM == "screen" ]]; then
   echo -ne '\ek'`hostname -s`'\e\\'
 fi;
 
+# Bail if we're already tmux.
+if [[ ! -z "$TMUX_PANE" ]]; then
+    return
+fi
+
 # Start screen, if possible
 if [[ -x /usr/bin/screen ]]; then
   # If we're not already in a screen, prompt for opening the outer screen.

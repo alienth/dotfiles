@@ -6,7 +6,7 @@ alias psgrep='ps auxwww | grep'
 
 alias ..='cd ..'
 
-alias psql='psql --set "serverhostname=$HOSTNAME"'
+alias psql='psql --set "serverhostname=$HOST"'
 
 alias grep='grep --color=auto'
 

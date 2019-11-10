@@ -2,8 +2,7 @@
 HISTSIZE=9999999999
 HISTFILESIZE=9999999999
 SAVEHIST=9999999999
-HOSTNAME=`hostname -s || echo unknown`
-HISTFILE=~/.zsh_history/$HOSTNAME
+HISTFILE=~/.zsh_history/$HOST
 
 
 setopt histignoredups sharehistory extendedhistory

@@ -150,7 +150,7 @@ autocmd BufReadPost *
 " deoplete
 "------------------------------------------------------------------------------
 
-if has('lua') && has('python3')
+if has('python3')
   let deoplete#enable_at_startup = 1
 endif
 

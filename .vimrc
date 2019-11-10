@@ -147,6 +147,15 @@ autocmd BufReadPost *
      \ endif
 
 "------------------------------------------------------------------------------
+" deoplete
+"------------------------------------------------------------------------------
+
+if has('lua') && has('python3')
+  let deoplete#enable_at_startup = 1
+endif
+
+
+"------------------------------------------------------------------------------
 " tagbar
 "------------------------------------------------------------------------------
 
@@ -298,7 +307,7 @@ let g:EclimCompletionMethod = "omnifunc"
 " notes stuff
 "------------------------------------------------------------------------------
 
-autocmd FileType notes NeoCompleteLock " Disable neocomplete autocomplete in notes.
+autocmd FileType notes call deoplete#disable() " Disable deoplete in notes.
 
 let g:notes_directories = ['~/notes']
 let g:notes_word_boundaries = 1

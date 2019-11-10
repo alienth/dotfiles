@@ -100,7 +100,6 @@ set hidden  " When you 'abandon' a buffer (i.e., when you no longer have a
             " buffer not being saved.
 
 set lazyredraw " don't update screen when in the middle of executing macros
-set splitbelow " when opening window splits, open below.
 
 set termsize=10x0 " make the terminal window smol
 

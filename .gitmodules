@@ -64,3 +64,12 @@
 [submodule ".vim/bundle/jedi-vim"]
 	path = .vim/bundle/jedi-vim
 	url = git@github.com:davidhalter/jedi-vim.git
+[submodule ".vim/bundle/deoplete.nvim"]
+	path = .vim/bundle/deoplete.nvim
+	url = https://github.com/Shougo/deoplete.nvim.git
+[submodule ".vim/bundle/nvim-yarp"]
+	path = .vim/bundle/nvim-yarp
+	url = https://github.com/roxma/nvim-yarp.git
+[submodule ".vim/bundle/vim-hug-neovim-rpc"]
+	path = .vim/bundle/vim-hug-neovim-rpc
+	url = https://github.com/roxma/vim-hug-neovim-rpc.git

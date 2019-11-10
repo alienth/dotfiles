@@ -1,4 +1,4 @@
-if [ command -v vim &>/dev/null ]; then
+if command -v vim &>/dev/null; then
   export VISUAL=$(command -v vim)
 else
   export VISUAL=$(command -v vi)

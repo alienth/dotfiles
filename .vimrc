@@ -21,9 +21,9 @@ set background=dark
 " \"50 - save 50 lines for each register
 " :20  - remember 20 items in command-line history
 " /20  - remember 20 items in search history
-" %    - remember the buffer list (if vim started without a file arg)
+" %    - REMOVED remember the buffer list (if vim started without a file arg)
 " n    - set name of viminfo file
-set viminfo='20,\"50,:20,/20,%
+set viminfo='20,\"50,:20,/20
 
 set nocompatible  " Clean out any compat. Necessary? FIXME
 

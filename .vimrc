@@ -102,7 +102,11 @@ set hidden  " When you 'abandon' a buffer (i.e., when you no longer have a
 
 set lazyredraw " don't update screen when in the middle of executing macros
 
-set termsize=10x0 " make the terminal window smol
+if has('nvim')
+  let g:man_hardwrap = 1 " Hard-wrap to MANWIDTH. Fixes width layout in man.
+else
+  set termsize=10x0 " make the terminal window smol
+endif
 
 " How quickly swapfile is written after nothing being typed.
 " Impacts git-gutter update times.

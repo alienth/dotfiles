@@ -151,6 +151,13 @@ autocmd BufReadPost *
      \   exe "normal! g`\"" |
      \ endif
 
+if has('nvim')
+  let g:python3_host_prog = $HOME .. '/venv/bin/python'
+  let g:ruby_host_prog = '~/.gem/ruby/2.5.0/bin/neovim-ruby-host'
+else
+  set pythonthreehome=$HOME/venv
+endif
+
 "------------------------------------------------------------------------------
 " deoplete
 "------------------------------------------------------------------------------

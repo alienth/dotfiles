@@ -1,4 +1,6 @@
-if command -v vim &>/dev/null; then
+if command -v nvim &>/dev/null; then
+  export VISUAL=$(command -v nvim)
+elif command -v vim &>/dev/null; then
   export VISUAL=$(command -v vim)
 else
   export VISUAL=$(command -v vi)
@@ -27,6 +29,8 @@ vi () {
   fi
   $VISUAL "$@";
 }
+
+alias vim=vi
 
 man () {
   /usr/bin/man -w $* && $VISUAL -c ":Man $*" -c 'silent only'

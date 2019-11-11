@@ -35,6 +35,7 @@ set softtabstop=4 " number of spaces a soft-<Tab> inserts when editing
 set shiftwidth=4  " number of spaces to use for each autoindent
 set shiftround    " Round indent to multiple of shiftwidth.
 set tabstop=8     " literal tabs are 8 spaces
+set guicursor=    " disable guicursor
 
 setglobal commentstring=#\ %s " Default to # for comments.
 

@@ -102,6 +102,8 @@ set hidden  " When you 'abandon' a buffer (i.e., when you no longer have a
 
 set lazyredraw " don't update screen when in the middle of executing macros
 
+let g:netrw_browsex_viewer='xdg-open'
+
 if has('nvim')
   let g:man_hardwrap = 1 " Hard-wrap to MANWIDTH. Fixes width layout in man.
 else

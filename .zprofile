@@ -17,8 +17,21 @@ if [[ ! -z "$TMUX_PANE" ]]; then
     return
 fi
 
-# Start screen, if possible
-if [[ -x /usr/bin/screen ]]; then
+if [[ -x /usr/bin/tmux ]]; then
+  if [[ -z $TMUX && -f ~/.outer ]]; then
+    echo "Run outer tmux? "
+    local INPUT
+    read -qs INPUT
+    if [[ "$INPUT" == "y" ]]; then
+      tmux new-session -A -s outer
+    else
+      tmux new-session -A -s inner
+    fi
+  else
+    unset TMUX
+    tmux new-session -A -s inner
+  fi
+elif [[ -x /usr/bin/screen ]]; then
   # If we're not already in a screen, prompt for opening the outer screen.
   if [[ "$TERM" != "screen" && -f ~/.masterscreen ]]; then
     screen -ls

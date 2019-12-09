@@ -32,3 +32,4 @@ function find_ssh_auth_sock() {
 }
 
 find_ssh_auth_sock
+echo "SSH_AUTH_SOCK is $SSH_AUTH_SOCK"

@@ -24,6 +24,10 @@ local current_dir='${PWD/#$HOME/~}'
 
 # Git info.
 local git_info='$(git_prompt_info)'
+local tf_info='$(tf_prompt_info)'
+ZSH_THEME_TF_PROMPT_PREFIX_DEFAULT="tf:%{$fg[cyan]%}"
+ZSH_THEME_TF_PROMPT_PREFIX_NONDEFAULT="tf:%{$fg[red]%}"
+ZSH_THEME_TF_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg[white]%}on%{$reset_color%} git:%{$fg[cyan]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}x"
@@ -33,7 +37,8 @@ ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg[green]%}o"
 PROMPT="
 (${current_dir}) \
 ${ret_status}\
-${git_info}
+${git_info} \
+${tf_info}
 %{$fg[white]%}%n%{$fg[${container_color}]%}@${box_name}%{$reset_color%} \
 %{$terminfo[bold]$fg[white]%}$ %{$reset_color%}"
 

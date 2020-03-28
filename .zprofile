@@ -32,11 +32,12 @@ elif [[ -x /usr/bin/screen ]]; then
   # If we're not already in a screen, prompt for opening the outer screen.
   if [[ "$TERM" != "screen" && -f ~/.masterscreen ]]; then
     screen -ls
+    echo -n "Run outer screen? "
     local INPUT
-    vared -p "Outer(1) or Inner(2)?: " -c INPUT
-    if [[ "$INPUT" == "1" ]]; then
-      screen -c .masterscreen -xR outer
-    elif [[ "$INPUT" == "2" ]]; then
+    read -qs INPUT
+    if [[ "$INPUT" == "y" ]]; then
+      screen -c .outerscreen -xR outer
+    else
       screen -xR inner
     fi
   else

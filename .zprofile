@@ -12,7 +12,22 @@ if [[ $TERM == "screen" ]]; then
   echo -ne '\ek'`hostname -s`'\e\\'
 fi;
 
-if [[ -x /usr/bin/tmux ]]; then
+if [[ -x /usr/bin/screen ]]; then
+  # If we're not already in a screen, prompt for opening the outer screen.
+  if [[ "$TERM" != "screen" && -f ~/.masterscreen ]]; then
+    screen -ls
+    echo -n "Run outer screen? "
+    local INPUT
+    read -qs INPUT
+    if [[ "$INPUT" == "y" ]]; then
+      screen -c .outerscreen -xR outer
+    else
+      screen -xR inner
+    fi
+  else
+    screen -xR inner
+  fi
+elif [[ -x /usr/bin/tmux ]]; then
   if [[ -z $TMUX ]]; then 
     if [[ -f ~/.outer ]]; then
       echo -n "Run outer tmux? "
@@ -28,21 +43,4 @@ if [[ -x /usr/bin/tmux ]]; then
       exec tmux new-session -A -s inner
     fi
   fi
-elif [[ -x /usr/bin/screen ]]; then
-  # If we're not already in a screen, prompt for opening the outer screen.
-  if [[ "$TERM" != "screen" && -f ~/.masterscreen ]]; then
-    screen -ls
-    echo -n "Run outer screen? "
-    local INPUT
-    read -qs INPUT
-    if [[ "$INPUT" == "y" ]]; then
-      screen -c .outerscreen -xR outer
-    else
-      screen -xR inner
-    fi
-  else
-    screen -xR inner
-  fi
 fi
-
-

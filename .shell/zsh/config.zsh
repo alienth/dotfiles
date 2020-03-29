@@ -14,6 +14,11 @@ bindkey -M viins "^R" history-incremental-pattern-search-backward
 bindkey -M viins "^P" up-line-or-history
 bindkey -M viins "^N" down-line-or-history
 
+# By default, vi-backward-delete-char would be used with backspace (^?). This
+# doesn't allow backspacing over newline characters, which can be annoying if a
+# newline character was pasted.
+bindkey -v '^?' backward-delete-char
+
 # The 'undo completion/expansion' key
 bindkey  undo
 

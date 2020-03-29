@@ -14,7 +14,7 @@ fi;
 
 if [[ -x /usr/bin/screen ]]; then
   # If we're not already in a screen, prompt for opening the outer screen.
-  if [[ "$TERM" != "screen" && -f ~/.masterscreen ]]; then
+  if [[ "$TERM" != "screen" && -f ~/.outer ]]; then
     screen -ls
     echo -n "Run outer screen? "
     local INPUT

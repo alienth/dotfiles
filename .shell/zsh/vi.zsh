@@ -7,7 +7,7 @@ else
   export VISUAL=$(command -v vi)
 fi
 
-#complete -c vipath
+complete -A command vipath
 vipath () {
         $VISUAL $(command -v $1)
 }

@@ -12,6 +12,16 @@ if [[ $TERM == "screen" ]]; then
   echo -ne '\ek'`hostname -s`'\e\\'
 fi;
 
+# When sshing into boxes, by default only TERM is passed and accepted. This
+# means the remote side does not get our COLORTERM variable, and assumes we do
+# not support colour. If we ended up passing in xterm-256color, we recreate
+# COLORTERM for use when we execute a screen. We can then set our TERM within
+# screen to screen-256color.
+# This is complemented by settings in .shell/zsh/config.zsh
+if [[ "$TERM" == "xterm-256color" && -z "$COLORTERM" ]]; then
+  export COLORTERM=truecolor
+fi
+
 if [[ -x /usr/bin/screen ]]; then
   # If we're not already in a screen, prompt for opening the outer screen.
   if [[ "$TERM" != "screen" && -f ~/.outer ]]; then

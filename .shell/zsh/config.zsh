@@ -32,15 +32,7 @@ if [[ ("$COLORTERM" == "mate-terminal" || "$COLORTERM" == "truecolor") && "$TERM
   export TERM=xterm-256color
 fi
 
-# When sshing into boxes, by default only TERM is passed and accepted. This
-# means the remote side does not get our COLORTERM variable, and assumes we do
-# not support colour. If we ended up passing in xterm-256color, we recreate
-# COLORTERM for use when we execute a screen. We can then set our TERM within
-# screen to screen-256color.
-if [[ "$TERM" == "xterm-256color" && -z "$COLORTERM" ]]; then
-  export COLORTERM=truecolor
-fi
-
+# This is complemented by settings in .zprofile
 if [[ "$COLORTERM" == "truecolor" && "$TERM" == "screen" ]]; then
   export TERM=screen-256color
 fi

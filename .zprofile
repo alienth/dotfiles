@@ -17,9 +17,15 @@ fi;
 # not support colour. If we ended up passing in xterm-256color, we recreate
 # COLORTERM for use when we execute a screen. We can then set our TERM within
 # screen to screen-256color.
+#
+# The screen-256color check is necessary to ensure the inner-screen gets
+# $COLORTERM set.
+#
 # This is complemented by settings in .shell/zsh/config.zsh
-if [[ "$TERM" == "xterm-256color" && -z "$COLORTERM" ]]; then
-  export COLORTERM=truecolor
+if [[ -z "$COLORTERM" ]]; then
+  if [[ "$TERM" == "xterm-256color" || "$TERM" == "screen-256color" ]]; then
+    export COLORTERM=truecolor
+  fi
 fi
 
 if [[ -x /usr/bin/screen ]]; then

@@ -147,6 +147,8 @@ au FileType python hi def link dangerZone error
 autocmd BufWinLeave .* mkview
 autocmd BufWinEnter .* silent loadview
 
+autocmd BufNewFile,BufRead *.vcl set filetype=conf
+
 " Return to last edit position when opening files, except on git commit
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") && &ft != 'gitcommit' |

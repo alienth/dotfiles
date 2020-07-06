@@ -9,4 +9,7 @@ setopt histignoredups sharehistory extendedhistory
 #setopt histverify
 setopt histignorespace
 
-alias history='fc -il 1'
+alias history='histdb'
+
+source ~/.shell/zsh-histdb/histdb-interactive.zsh
+bindkey -M viins '^R' _histdb-isearch

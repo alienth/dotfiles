@@ -10,7 +10,6 @@ unsetopt cdablevars
 bindkey -v
 bindkey -M viins "^[[A" up-line-or-history
 bindkey -M viins "^[[B" down-line-or-history
-bindkey -M viins "^R" history-incremental-pattern-search-backward
 bindkey -M viins "^P" up-line-or-history
 bindkey -M viins "^N" down-line-or-history
 

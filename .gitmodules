@@ -79,3 +79,6 @@
 [submodule ".vim/bundle/vim-hug-neovim-rpc"]
 	path = .vim/bundle/vim-hug-neovim-rpc
 	url = https://github.com/roxma/vim-hug-neovim-rpc.git
+[submodule ".shell/zsh-histdb"]
+	path = .shell/zsh-histdb
+	url = https://github.com/larkery/zsh-histdb.git

@@ -11,5 +11,6 @@ setopt histignorespace
 
 alias history='fc -il'
 
-source ~/.shell/zsh-histdb/histdb-interactive.zsh
-bindkey -M viins '^R' _histdb-isearch
+# Tried this, but it was too slow.
+# bindkey -M viins '^R' _histdb-isearch
+bindkey -M viins "^R" history-incremental-pattern-search-backward

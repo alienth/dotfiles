@@ -81,4 +81,4 @@
 	url = https://github.com/roxma/vim-hug-neovim-rpc.git
 [submodule ".shell/zsh-histdb"]
 	path = .shell/zsh-histdb
-	url = https://github.com/larkery/zsh-histdb.git
+	url = https://github.com/alienth/zsh-histdb.git

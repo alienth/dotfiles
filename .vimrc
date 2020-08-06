@@ -267,6 +267,11 @@ au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>e <Plug>(go-rename)
 
+" Make these highlights easier to read. By default they linked to SpellBad,
+" SpellRare.
+hi goDiagnosticWarning term=bold cterm=bold ctermfg=Yellow
+hi goDiagnosticError term=bold cterm=bold ctermfg=Red
+
 "------------------------------------------------------------------------------
 " python-mode
 "------------------------------------------------------------------------------

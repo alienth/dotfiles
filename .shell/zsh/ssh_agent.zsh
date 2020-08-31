@@ -6,12 +6,12 @@ function find_ssh_auth_sock() {
   setopt nonomatch
 
   local file
-  for file in $HOME/.gnupg/S.gpg-agent.ssh $XDG_RUNTIME_DIR/gnupg/S.gpg-agent.ssh; do
-    if [[ ( -S $file ) ]]; then
-      export SSH_AUTH_SOCK=$file
-      return
-    fi
-  done
+#  for file in $HOME/.gnupg/S.gpg-agent.ssh $XDG_RUNTIME_DIR/gnupg/S.gpg-agent.ssh; do
+#    if [[ ( -S $file ) ]]; then
+#      export SSH_AUTH_SOCK=$file
+#      return
+#    fi
+#  done
   local sockets
   sockets=(/run/user/*/keyring/ssh)
   # Check if lsof exists

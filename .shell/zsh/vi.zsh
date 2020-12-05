@@ -1,5 +1,6 @@
 if command -v nvim &>/dev/null; then
   export VISUAL=$(command -v nvim)
+  alias vimdiff="$VISUAL -d"
 elif command -v vim &>/dev/null; then
   export VISUAL=$(command -v vim)
 else

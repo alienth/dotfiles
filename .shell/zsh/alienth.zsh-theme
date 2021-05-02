@@ -25,6 +25,7 @@ local current_dir='${PWD/#$HOME/~}'
 # Git info.
 local git_info='$(git_prompt_info)'
 local tf_info='$(tf_prompt_info)'
+local kube_info='$(kube_ps1)'
 ZSH_THEME_TF_PROMPT_PREFIX_DEFAULT="tf:%{$fg[cyan]%}"
 ZSH_THEME_TF_PROMPT_PREFIX_NONDEFAULT="tf:%{$fg[red]%}"
 ZSH_THEME_TF_PROMPT_SUFFIX="%{$reset_color%}"
@@ -33,12 +34,17 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}x"
 ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg[green]%}o"
 
+KUBE_PS1_COLOR_SYMBOL="%{$reset_color%}"
+KUBE_PS1_COLOR_CONTEXT="%{$reset_color%}"
+KUBE_PS1_COLOR_NS="%{$fg[cyan]%}"
+
 # Prompt format: \n # USER at MACHINE in DIRECTORY on git:BRANCH STATE [TIME] \n $ 
 PROMPT="
 (${current_dir}) \
 ${ret_status}\
 ${git_info} \
-${tf_info}
+${tf_info} \
+${kube_info}
 %{$fg[white]%}%n%{$fg[${container_color}]%}@${box_name}%{$reset_color%} \
 %{$terminfo[bold]$fg[white]%}$ %{$reset_color%}"
 

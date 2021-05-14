@@ -22,10 +22,18 @@ local ret_status="%(?:%{$fg_bold[green]%}^_^ :%{$fg_bold[red]%}O_O %s)%{$reset_c
 # Directory info.
 local current_dir='${PWD/#$HOME/~}'
 
+function kube_prompt {
+    if [[ $KUBECTL_TOUCH ]]; then
+        if [[ $(date +%s)-$KUBECTL_TOUCH -lt 600 ]]; then
+            echo -n $(kube_ps1)
+        fi
+    fi
+}
+
 # Git info.
 local git_info='$(git_prompt_info)'
 local tf_info='$(tf_prompt_info)'
-local kube_info='$(kube_ps1)'
+local kube_info='$(kube_prompt)'
 ZSH_THEME_TF_PROMPT_PREFIX_DEFAULT="tf:%{$fg[cyan]%}"
 ZSH_THEME_TF_PROMPT_PREFIX_NONDEFAULT="tf:%{$fg[red]%}"
 ZSH_THEME_TF_PROMPT_SUFFIX="%{$reset_color%}"

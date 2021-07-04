@@ -42,9 +42,10 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}x"
 ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg[green]%}o"
 
-KUBE_PS1_COLOR_SYMBOL="%{$reset_color%}"
-KUBE_PS1_COLOR_CONTEXT="%{$reset_color%}"
-KUBE_PS1_COLOR_NS="%{$fg[cyan]%}"
+KUBE_PS1_SYMBOL_COLOR="default"
+KUBE_PS1_CTX_COLOR="default"
+KUBE_PS1_NS_COLOR="cyan"
+KUBE_PS1_SEPARATOR=""
 
 # Prompt format: \n # USER at MACHINE in DIRECTORY on git:BRANCH STATE [TIME] \n $ 
 PROMPT="

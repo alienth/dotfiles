@@ -5,9 +5,11 @@ SAVEHIST=10000000000
 HISTFILE=~/.zsh_history/$HOST
 
 
-setopt histignoredups sharehistory extendedhistory
-#setopt histverify
-setopt histignorespace
+setopt hist_ignore_dups       # ignore duplicated commands history list
+setopt hist_ignore_space      # ignore commands that start with space
+setopt extended_history       # Track timestamps in history file
+setopt share_history          # import new cmds from hist file, and auto-appends hist lines to file
+#setopt hist_verify            # show command with history expansion to user before running it
 
 alias history='fc -il'
 

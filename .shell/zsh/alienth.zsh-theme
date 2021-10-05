@@ -1,10 +1,4 @@
-# Clean, simple, compatible and meaningful.
-# Tested on Linux, Unix and Windows under ANSI colors.
-# It is recommended to use with a dark background and the font Inconsolata.
-# Colors: black, red, green, yellow, *blue, magenta, cyan, and white.
-# 
-# http://ysmood.org/wp/2013/03/my-ys-terminal-theme/
-# Mar 2013 ys
+# Adopted from http://ysmood.org/wp/2013/03/my-ys-terminal-theme/
 
 # Machine name.
 function box_name {
@@ -47,7 +41,6 @@ KUBE_PS1_CTX_COLOR="default"
 KUBE_PS1_NS_COLOR="cyan"
 KUBE_PS1_SEPARATOR=""
 
-# Prompt format: \n # USER at MACHINE in DIRECTORY on git:BRANCH STATE [TIME] \n $ 
 PROMPT="
 (${current_dir}) \
 ${ret_status}\
@@ -56,16 +49,3 @@ ${tf_info} \
 ${kube_info}
 %{$fg[white]%}%n%{$fg[${container_color}]%}@${box_name}%{$reset_color%} \
 %{$terminfo[bold]$fg[white]%}$ %{$reset_color%}"
-
-#if [[ "$(whoami)" == "root" ]]; then
-#PROMPT="
-#%{$terminfo[bold]$fg[blue]%}#%{$reset_color%} \
-#%{$bg[yellow]%}%{$fg[cyan]%}%n%{$reset_color%} \
-#%{$fg[white]%}at \
-#%{$fg[green]%}$(box_name) \
-#%{$fg[white]%}in \
-#%{$terminfo[bold]$fg[yellow]%}${current_dir}%{$reset_color%}\
-#${git_info} \
-#%{$fg[white]%}[%*]
-#%{$terminfo[bold]$fg[red]%}$ %{$reset_color%}"
-#fi

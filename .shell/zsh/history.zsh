@@ -11,6 +11,8 @@ setopt extended_history       # Track timestamps in history file
 setopt share_history          # import new cmds from hist file, and auto-appends hist lines to file
 #setopt hist_verify            # show command with history expansion to user before running it
 
+# Make history print out timestamps in the one true format: ISO8601.
+# By default, history is just `fc -l`.
 alias history='fc -il'
 
 # Tried this, but it was too slow.

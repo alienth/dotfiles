@@ -63,7 +63,7 @@
        url = https://github.com/ap/vim-buftabline.git
 [submodule ".vim/bundle/jedi-vim"]
 	path = .vim/bundle/jedi-vim
-	url = git@github.com:davidhalter/jedi-vim.git
+        url = https://github.com/davidhalter/jedi-vim.git
 [submodule ".vim/bundle/vim-terraform"]
 	path = .vim/bundle/vim-terraform
 	url = https://github.com/hashivim/vim-terraform.git
